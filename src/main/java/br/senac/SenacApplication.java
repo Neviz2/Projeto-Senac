@@ -1,4 +1,4 @@
-package br.senac.Senac;
+package br.senac;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

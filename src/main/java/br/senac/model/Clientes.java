@@ -9,10 +9,16 @@ import jakarta.persistence.Table;
 import lombok.Data;
 
 // @Data -- feito sem o lombok para ter os metodos CONSTRUTORES
+
+
+
 @Entity
 @Table(name = "clientes")
 public class Clientes {
 
+      public Clientes() {
+    }
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
