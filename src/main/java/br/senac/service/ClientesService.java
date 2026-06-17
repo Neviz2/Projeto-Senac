@@ -10,39 +10,32 @@ import br.senac.repository.ClientesRepository;
 
 @Service
 public class ClientesService {
-
+ 
+    
     @Autowired
-    private ClientesRepository clientesRepository; // puxa o repository para utilizar no service
+    private ClientesRepository ClientesRepository; // puxa o repository para utilizar no service
 
-    public Clientes salvar(Clientes cliente) {
 
-        return clientesRepository.save(cliente);
+    public Clientes salvar(Clientes cliente){
+        
+        return ClientesRepository.save(cliente); // save é um comando nativo do spring que faz o insert no banco dentro da tabela clientes
     }
 
-    public List<Clientes> ListarTodos() {
+    public List<Clientes> listarTodos(){
 
-        return clientesRepository.findAll();
-    }
+        return ClientesRepository.findAll();
 
-    public Clientes BuscarID(Long id) {
+    };
 
-        return clientesRepository.findById(id).orElse(null);
-    }
+    public List<Clientes> buscarPorNome(String nome){
 
-    public List<Clientes> buscarNome(String nome) {
+    return ClientesRepository.findByNome(nome);
 
-        return clientesRepository.findByNome(nome);
+    };    
 
-    }
+    public List<Clientes> buscarPorCpf(String cfp){
 
-    public List<Clientes> BuscarCpf(String cpf) {
-
-        return clientesRepository.findByCpf(cpf);
-    }
-
-    public void deletar(Long id) // void pq não retorna e usa o delete do spring
-    {
-        clientesRepository.deleteById(id);
-    }
+        return ClientesRepository.findBycpf(cfp);
+    };
 
 }

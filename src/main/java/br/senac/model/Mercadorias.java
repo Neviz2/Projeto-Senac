@@ -1,6 +1,6 @@
 package br.senac.model;
 
-import jakarta.annotation.Generated;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -64,5 +64,11 @@ public class Mercadorias {
         this.preco = preco;
     }
 
+public Long getIdmerc() {
+        return idmerc;
+    }
 
+    public void setIdmerc(Long idmerc) {
+        this.idmerc = idmerc;
+    }
 }

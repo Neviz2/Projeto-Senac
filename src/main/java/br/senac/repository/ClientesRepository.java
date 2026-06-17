@@ -7,9 +7,13 @@ import org.springframework.stereotype.Repository;
 
 import br.senac.model.Clientes;
 
+
+// repositorio controla o model do sql com o jpaRepository que é uma classe padrão do spring para isso
+
 @Repository
 public interface ClientesRepository extends JpaRepository<Clientes, Long> {
     
     List<Clientes> findByNome(String nome);
-    List<Clientes> findByCpf(String cpf);
+
+    List<Clientes> findBycpf(String cpf);
 }

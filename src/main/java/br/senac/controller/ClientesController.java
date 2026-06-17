@@ -31,6 +31,6 @@ public class ClientesController {
     // (GET)
     @GetMapping
     public List<Clientes> listarTodos() {
-        return clientesService.ListarTodos();
+        return clientesService.listarTodos();
     }
 }

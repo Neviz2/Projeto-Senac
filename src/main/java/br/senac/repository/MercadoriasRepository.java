@@ -8,8 +8,8 @@ import br.senac.model.Mercadorias;
 
 public interface MercadoriasRepository extends JpaRepository<Mercadorias, Long>{
 
-    Mercadorias salvarMerc(Mercadorias merc);
-    List<Mercadorias> findByNome(String nome);
-    List<Mercadorias> findBymarca(String marca);
+    
+    List<Mercadorias> findByTipo(String tipo);
+    List<Mercadorias> findByMarca(String marca);
     
 }
