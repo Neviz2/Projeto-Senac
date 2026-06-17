@@ -49,4 +49,52 @@ public class Servico {
         
     }
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Clientes getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Clientes cliente) {
+        this.cliente = cliente;
+    }
+
+    public Mercadorias getMercadoria() {
+        return mercadoria;
+    }
+
+    public void setMercadoria(Mercadorias mercadoria) {
+        this.mercadoria = mercadoria;
+    }
+
+    public String getDescServico() {
+        return descServico;
+    }
+
+    public void setDescServico(String descServico) {
+        this.descServico = descServico;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public LocalDate getDataEnt() {
+        return dataEnt;
+    }
+
+    public void setDataEnt(LocalDate dataEnt) {
+        this.dataEnt = dataEnt;
+    }
+
 }
