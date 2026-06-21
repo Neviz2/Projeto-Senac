@@ -33,9 +33,9 @@ public class ServicoService {
        return servicoRepository.findByClienteNomeContainingIgnoreCase(nome);
     };
 
-    public List<Servico> BuscarPormercServico(String mercadoria){ // buscar mercadoria
+    public List<Servico> BuscarPormercServico(String tipo){ // buscar mercadoria
 
-        return servicoRepository.findByMercadoriaNomeContainingIgnoreCase(mercadoria);
+        return servicoRepository.findByMercadoriaTipoContainingIgnoreCase(tipo);
     };
 
 
