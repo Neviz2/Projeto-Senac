@@ -1,10 +1,12 @@
 package br.senac.model;
 
-
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -13,7 +15,6 @@ public class Mercadorias {
 
     public Mercadorias() { // precisa ter essa classe vazia para o String
     }
-    
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,12 +25,24 @@ public class Mercadorias {
     private String descDefeito;
     private Double preco;
 
-    public Mercadorias(String tipo, String marca, String descDefeito, Double preco){
+    @Column(nullable = false)
+    private String modelo;
+
+    @Column(name = "numero_serie", nullable = false)
+    private String numeroSerie;
+
+    @ManyToOne
+    @JoinColumn(name = "cliente_id")
+    private Clientes cliente;
+
+    public Mercadorias(String tipo, String marca, String descDefeito, Double preco, String modelo, String numeroSerie) {
 
         this.tipo = tipo;
         this.marca = marca;
         this.descDefeito = descDefeito;
         this.preco = preco;
+        this.modelo = modelo;
+        this.numeroSerie = numeroSerie;
     }
 
     public String getTipo() {
@@ -64,11 +77,27 @@ public class Mercadorias {
         this.preco = preco;
     }
 
-public Long getIdmerc() {
+    public Long getIdmerc() {
         return idmerc;
     }
 
     public void setIdmerc(Long idmerc) {
         this.idmerc = idmerc;
+    }
+
+    public String getNumeroSerie() {
+        return numeroSerie;
+    }
+
+    public void setNumeroSerie(String numeroSerie) {
+        this.numeroSerie = numeroSerie;
+    }
+
+    public String getModelo() {
+        return modelo;
+    }
+
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
     }
 }
