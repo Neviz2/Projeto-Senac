@@ -15,30 +15,30 @@ import jakarta.persistence.Table;
 @Table(name = "servico")
 public class Servico {
 
-
-    public Servico(){}
+    public Servico() {
+    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
 
     @ManyToOne
     @JoinColumn(name = "cliente_id")
     private Clientes cliente;
 
-
     @ManyToOne
     @JoinColumn(name = "merc_id")
     private Mercadorias mercadoria;
 
-
     private String descServico;
     private String status;
     private LocalDate dataEnt;
+    private String responsavel;
 
+    private Double custo;
 
-    public Servico(Long id, Clientes cliente, Mercadorias mercadoria, String descServico, String status, LocalDate dataEnt){
+    public Servico(Long id, Clientes cliente, Mercadorias mercadoria, String descServico, String status,
+            LocalDate dataEnt, String responsavel, Double custo) {
 
         this.id = id;
         this.cliente = cliente;
@@ -46,7 +46,24 @@ public class Servico {
         this.descServico = descServico;
         this.status = status;
         this.dataEnt = dataEnt;
-        
+        this.responsavel = responsavel;
+        this.custo = custo;
+    }
+
+    public void setResponsavel(String responsavel) {
+        this.responsavel = responsavel;
+    }
+
+    public String getResponsavel() {
+        return responsavel;
+    }
+
+    public Double getCusto() {
+        return custo;
+    }
+
+    public void setCusto(Double custo) {
+        this.custo = custo;
     }
 
     public Long getId() {
